@@ -130,6 +130,11 @@ export const linqDeferredExecution: Lesson = {
   language: "csharp",
   filename: "Program.cs",
   keywords: ["LINQ", "deferred execution", "IEnumerable", "lazy evaluation", "ToList", "yield"],
+  intro: [
+    "LINQ lets you write queries against collections that read like English: `Where`, `Select`, `OrderBy`. The catch is that these operations do not actually run when you write them.",
+    "Instead, they build up a *plan* — a pipeline waiting for someone to pull items through. Only when you call something like `.ToList()` or iterate with `foreach` does the pipeline actually execute, one element at a time.",
+    "This lesson makes the pipeline visible: watch elements flow through each stage exactly when they're needed, and see why enumerating the same query twice runs it twice.",
+  ],
   stages: [
     {
       id: "build",

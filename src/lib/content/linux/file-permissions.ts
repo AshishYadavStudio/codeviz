@@ -115,6 +115,11 @@ export const filePermissions: Lesson = {
   language: "bash",
   filename: "session.sh",
   keywords: ["chmod", "file permissions", "umask", "rwx", "linux security", "octal permissions"],
+  intro: [
+    "Every file on Linux has a set of **permissions** that decide who is allowed to read it, change it, or run it. There are three categories of \"who\": the file's owner, the owner's group, and everyone else.",
+    "For each category there are three switches — read (r), write (w), execute (x) — so nine switches total. `ls -l` shows them as `rwxr-xr--`, and `chmod 755` sets them using octal (base-8) numbers because each group of three bits fits in one digit.",
+    "This lesson walks through the nine bits, decodes an octal permission string, and shows what changes when you `chmod +x` a script.",
+  ],
   stages: [
     {
       id: "read-it",

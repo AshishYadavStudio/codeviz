@@ -146,6 +146,11 @@ export const stringsInMemory: Lesson = {
   access: "free",
   language: "c",
   keywords: ["c strings", "null terminator", "strlen", "buffer overflow", "string literal", "strcpy"],
+  intro: [
+    "Most languages have a String type — an object that knows its own length. C does not. In C, a string is just a series of `char` bytes in memory, terminated by a single zero byte (`\\0`) that means \"the string ends here\".",
+    "This convention is why `strlen` has to walk the string counting characters until it hits the zero, and why forgetting the terminator turns your string into whatever bytes happen to sit after it in memory.",
+    "This lesson lays out a string byte by byte, shows the terminator, and walks through what goes wrong when you copy a string into a buffer that is too small — the classic **buffer overflow**.",
+  ],
   stages: [
     {
       id: "array",

@@ -60,6 +60,11 @@ export const raiiAndLifetime: Lesson = {
   access: "free",
   language: "cpp",
   keywords: ["RAII", "destructor", "constructor", "c++ scope", "resource management"],
+  intro: [
+    "**RAII** stands for \"Resource Acquisition Is Initialisation\" — an unhelpful name for a very useful idea: tie every resource (memory, file, lock, socket) to the lifetime of a stack variable, so when the variable goes out of scope, its cleanup runs automatically.",
+    "The **constructor** grabs the resource; the **destructor** releases it. Because destructors fire at the closing brace, cleanup happens for you — even if the function throws an exception or returns early.",
+    "This lesson watches a `File` object open a file in its constructor and close it in its destructor, so you can see cleanup happen the instant the object goes out of scope.",
+  ],
   stages: [
     {
       id: "enter",

@@ -67,6 +67,11 @@ export const simpleSorts: Lesson = {
   access: "free",
   language: "c",
   keywords: ["bubble sort", "selection sort", "insertion sort", "O(n²)", "comparison sort"],
+  intro: [
+    "Sorting a list of values is one of the most-solved problems in computing. The three algorithms in this lesson are the simplest ones — none of them are what a professional library actually uses for large data, but they are the ones you learn first because their logic is easy to hold in your head.",
+    "**Bubble sort** repeatedly swaps adjacent out-of-order pairs. **Selection sort** repeatedly finds the minimum and puts it up front. **Insertion sort** takes each element and slides it back into its correct place among the already-sorted ones.",
+    "This lesson watches each one sort the same array of 5 values. All three are O(n²), but they move elements in very different ways — and insertion sort has one trick that makes real sort libraries still use it inside.",
+  ],
   stages: [
     {
       id: "unsorted",

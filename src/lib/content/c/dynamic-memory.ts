@@ -107,6 +107,11 @@ export const dynamicMemory: Lesson = {
   access: "free",
   language: "c",
   keywords: ["malloc", "free", "heap", "dangling pointer", "memory leak", "use after free"],
+  intro: [
+    "Local variables die when their function returns. That is a problem if you want a value to outlive its function — say, a linked list you keep adding to, or an image loaded once and shown many times.",
+    "The **heap** is a separate area of memory where you ask for space explicitly (`malloc`) and give it back explicitly (`free`). Space you take from the heap survives until *you* release it, no matter which function is running.",
+    "The freedom comes with a bill: if you forget to `free`, you leak memory. If you `free` twice, or use the memory after freeing it, you get corruption. This lesson walks through both the happy path and the classic bugs.",
+  ],
   stages: [
     {
       id: "before",

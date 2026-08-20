@@ -102,6 +102,11 @@ export const binarySearchTrees: Lesson = {
   access: "free",
   language: "c",
   keywords: ["binary search tree", "BST", "tree insertion", "tree search", "balanced tree"],
+  intro: [
+    "A **binary search tree** (BST) is a tree of nodes where every node holds a value and has up to two children. The magic rule: everything in the *left* subtree is smaller, everything in the *right* subtree is larger.",
+    "That single rule turns searching into a sequence of yes/no decisions. Each step down the tree halves the values still in play, which is why a balanced BST of a million nodes is only about 20 levels deep.",
+    "This lesson watches keys get inserted into a BST one by one, each walking down to its correct place, then watches search discard entire subtrees on every comparison.",
+  ],
   stages: [
     {
       id: "root",

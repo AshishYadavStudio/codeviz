@@ -54,6 +54,11 @@ export const arrayMemory: Lesson = {
   access: "free",
   language: "c",
   keywords: ["array", "contiguous memory", "indexing", "O(1) access", "O(n) insertion"],
+  intro: [
+    "An **array** is the simplest data structure there is: a block of memory with values packed side by side. That's it. Every other data structure gets compared to this one.",
+    "The magic of arrays is that they give you constant-time access to any element — `arr[5000]` and `arr[0]` take the same time — because the CPU can compute the exact address from the index. The cost is that inserting a value in the middle means shifting every element after it, which is slow.",
+    "This lesson visualises the block of memory, watches the address arithmetic for indexing, and shows why inserting is O(n) but appending is O(1).",
+  ],
   stages: [
     {
       id: "layout",

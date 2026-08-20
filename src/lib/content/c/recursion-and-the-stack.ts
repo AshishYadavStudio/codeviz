@@ -68,6 +68,11 @@ export const recursionAndTheStack: Lesson = {
   access: "free",
   language: "c",
   keywords: ["recursion", "call stack", "factorial", "base case", "stack overflow"],
+  intro: [
+    "**Recursion** is a function calling itself. That sounds like it should either be impossible or an infinite loop, but neither is true — each call gets its own frame with its own copy of the variables, so the calls don't interfere.",
+    "Recursion is powerful because some problems are naturally self-similar. \"Calculate 5!\" is really \"take 5, multiply it by 4!, and 4! is 4 times 3!, and…\" — each step is a smaller version of the same question.",
+    "This lesson watches recursive calls stack up frame by frame, hit the *base case* that stops them, and then unwind back to the answer.",
+  ],
   stages: [
     {
       id: "call",

@@ -114,6 +114,11 @@ export const inodesAndLinks: Lesson = {
   language: "bash",
   filename: "session.sh",
   keywords: ["inode", "hard link", "symlink", "ln", "unlink", "filesystem internals"],
+  intro: [
+    "A filename is not a file. On Linux, a filename is an entry in a directory that points at an **inode** — a numbered record that carries the actual metadata (size, permissions, owner) and the addresses of the file's data blocks.",
+    "This split is why one file can have many names (**hard links**), why deleting a filename does not always free the data, and why `mv` inside a filesystem is nearly free — nothing is copied, just directory entries changed.",
+    "This lesson visualises the inode behind a file, adds a second hard link, adds a symlink, and shows what \"deletion\" actually does.",
+  ],
   stages: [
     {
       id: "inode",

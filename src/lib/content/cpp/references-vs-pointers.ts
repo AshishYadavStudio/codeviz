@@ -77,6 +77,11 @@ export const referencesVsPointers: Lesson = {
   access: "free",
   language: "cpp",
   keywords: ["c++ references", "pointers vs references", "pass by reference", "aliasing"],
+  intro: [
+    "In C, if you want a function to modify a caller's variable, you pass a pointer. C++ adds a second option: a **reference**, written `int&`, which acts like the original variable itself.",
+    "The mental model: a pointer is a box that *holds an address*. A reference is not a box at all — it is another *name* for something that already exists.",
+    "This lesson shows the practical difference: references cannot be null, cannot be reassigned to point elsewhere, and read like normal variables. That trades pointer flexibility for pointer safety.",
+  ],
   stages: [
     {
       id: "x",

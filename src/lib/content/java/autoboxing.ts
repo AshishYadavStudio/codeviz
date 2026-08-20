@@ -108,6 +108,11 @@ export const autoboxing: Lesson = {
   access: "free",
   language: "java",
   keywords: ["autoboxing", "Integer cache", "unboxing", "NullPointerException", "== vs equals"],
+  intro: [
+    "**Autoboxing** is Java's convenience feature that quietly converts primitives into their wrapper objects (and back). When you write `Integer x = 5`, the compiler inserts a call to `Integer.valueOf(5)` for you.",
+    "It's supposed to be invisible — but it's not, in two famous ways. First, `==` on wrapper objects compares references, not values. Second, unboxing a `null` Integer throws `NullPointerException`.",
+    "This lesson visualises what autoboxing actually does, and then walks the notorious case where `Integer x = 127; Integer y = 127; x == y` is true but the same code with 128 is false.",
+  ],
   stages: [
     {
       id: "primitive",

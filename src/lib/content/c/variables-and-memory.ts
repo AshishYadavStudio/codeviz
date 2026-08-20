@@ -99,6 +99,11 @@ export const variablesAndMemory: Lesson = {
   access: "free",
   language: "c",
   keywords: ["c variables", "memory address", "stack frame", "sizeof", "ampersand operator"],
+  intro: [
+    "A computer's memory is one long strip of numbered boxes. Every box holds a number, and every box has an address — its position on the strip. That is all memory is.",
+    "A **variable** is a name your program gives to one of those boxes so you can talk about it in words rather than numbers. `age`, `total`, `count` — they all point at real boxes with real addresses.",
+    "This lesson watches the boxes appear as you declare variables, and shows you what your program is actually doing behind those familiar names.",
+  ],
   stages: [
     {
       id: "frame",

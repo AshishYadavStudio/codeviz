@@ -64,6 +64,11 @@ export const loadingData: Lesson = {
   language: "python",
   filename: "load.py",
   keywords: ["read_csv", "read_excel", "read_sql", "CSV", "encoding", "parse errors"],
+  intro: [
+    "Data analysis starts the same way every time: pull data from somewhere and get it into a DataFrame. That \"somewhere\" is usually a CSV file, an Excel spreadsheet, or a database.",
+    "Each source has its own gotchas. CSVs need the right delimiter and encoding. Excel needs the right sheet. SQL needs a connection and a query. But once loaded, everything becomes the same shape — a DataFrame — and the rest of your code doesn't care where it came from.",
+    "This lesson walks through each loader, shows what the raw source looks like, what the parsed DataFrame looks like, and what breaks when you get the options wrong.",
+  ],
   stages: [
     {
       id: "csv",

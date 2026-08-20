@@ -90,6 +90,11 @@ export const pipesAndRedirection: Lesson = {
   language: "bash",
   filename: "session.sh",
   keywords: ["pipes", "stdout", "stderr", "redirection", "2>&1", "shell pipeline"],
+  intro: [
+    "Every Linux program starts with three connections: **stdin** (an input stream, usually the keyboard), **stdout** (normal output, usually the terminal), and **stderr** (error output, also to the terminal by default).",
+    "The shell's superpower is that you can re-plug those connections without the program knowing. `> file` sends stdout to a file. `< file` reads stdin from a file. `|` connects one program's stdout to the next program's stdin.",
+    "This lesson watches those three streams get rewired: to a file, to another program, and both at once. That's the whole basis of the Unix pipeline philosophy: small tools composed into big work.",
+  ],
   stages: [
     {
       id: "streams",

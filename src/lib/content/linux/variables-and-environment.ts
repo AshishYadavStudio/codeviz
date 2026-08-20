@@ -67,6 +67,11 @@ export const variablesAndEnvironment: Lesson = {
   language: "bash",
   filename: "session.sh",
   keywords: ["shell variable", "export", "environment", "PATH", "child process", "env"],
+  intro: [
+    "Every process — every running program — has its own **environment**: a list of `NAME=value` pairs it can read. The shell sets these; programs it starts inherit them.",
+    "Some are famous: `PATH` lists the directories the shell searches for commands, `HOME` is your home directory, `EDITOR` is the program `git commit` should open. Most programs care about specific names and quietly ignore the rest.",
+    "This lesson shows the difference between a shell variable (only your current shell can see it) and an *exported* variable (child processes inherit a copy). Get this wrong and your scripts \"can't find\" values that seem obviously present.",
+  ],
   stages: [
     {
       id: "local",

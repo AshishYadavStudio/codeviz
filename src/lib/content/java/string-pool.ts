@@ -104,6 +104,11 @@ export const stringPool: Lesson = {
   access: "free",
   language: "java",
   keywords: ["string pool", "intern", "== vs equals", "java strings", "immutability"],
+  intro: [
+    "In Java, strings are objects. That means every string has an address on the heap, and two strings that print the same could be two *different* objects at two different addresses.",
+    "For efficiency, Java keeps a special **string pool** for string literals. Two literals with the same text share one object — but a string built at runtime (with `new String(...)` or by concatenation) gets its own separate object.",
+    "This lesson shows exactly which strings live in the pool and which don't, and why comparing strings with `==` is a bug — you almost always want `.equals()`.",
+  ],
   stages: [
     {
       id: "literal",

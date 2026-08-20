@@ -91,6 +91,11 @@ export const filesystemTree: Lesson = {
   language: "bash",
   filename: "session.sh",
   keywords: ["linux filesystem", "absolute path", "relative path", "cd", "pwd", "directory tree"],
+  intro: [
+    "On Linux, every file — a program, a photo, a config, a device — lives inside one huge tree. There are no drive letters (no C: or D:); everything hangs off a single root, written as `/`.",
+    "Where you \"are\" in that tree is called your **working directory**. Commands like `ls` and `cat` interpret filenames relative to it, which is why the same command can behave differently depending on where you ran it.",
+    "This lesson walks through the tree, shows the difference between absolute paths (from the root) and relative paths (from here), and explains what `..` and `~` and `-` actually stand for.",
+  ],
   stages: [
     {
       id: "root",

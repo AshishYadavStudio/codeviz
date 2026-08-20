@@ -59,6 +59,11 @@ export const processesAndFork: Lesson = {
   language: "bash",
   filename: "session.sh",
   keywords: ["fork", "exec", "process", "PID", "signals", "SIGKILL", "zombie process", "background jobs"],
+  intro: [
+    "A **process** is a running instance of a program, identified by a number called the PID. Every command you run in the shell is a process; every browser tab, every server, every daemon.",
+    "The way Linux creates a new process is unusual: `fork()` makes a copy of the *current* process, and then `exec()` replaces that copy's program with a different one. So running `ls` is really \"clone the shell, then have the clone turn into `ls`\".",
+    "This lesson walks through fork + exec, shows a parent waiting for its child, and covers signals — the way one process can politely (or rudely) tell another to stop.",
+  ],
   stages: [
     {
       id: "shell",

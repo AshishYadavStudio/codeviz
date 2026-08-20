@@ -79,6 +79,11 @@ export const stringBuilder: Lesson = {
   access: "free",
   language: "java",
   keywords: ["StringBuilder", "string concatenation", "immutable", "garbage collection", "performance"],
+  intro: [
+    "Java strings are **immutable** — once created, they cannot change. So `s = s + \"x\"` doesn't add \"x\" to `s`; it builds a whole new string containing the old text plus \"x\", and points `s` at that.",
+    "Inside a loop, that means every iteration allocates a fresh string and abandons the previous one to garbage. For 1000 iterations, that's 1000 wasted objects and hundreds of thousands of copied characters.",
+    "`StringBuilder` is a mutable buffer meant exactly for this. This lesson watches the difference: one shared buffer that appends in place, versus a string of one-shot allocations getting abandoned as garbage.",
+  ],
   stages: [
     {
       id: "empty",

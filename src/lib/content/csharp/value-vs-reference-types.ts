@@ -87,6 +87,11 @@ export const valueVsReferenceTypes: Lesson = {
   language: "csharp",
   filename: "Program.cs",
   keywords: ["struct vs class", "value type", "reference type", "c# memory", "pass by value"],
+  intro: [
+    "In C#, the single most important type-system decision is `struct` versus `class`. It looks like a cosmetic choice of keyword. It is not.",
+    "A `struct` is a **value type** — the value lives inside the variable itself. A `class` is a **reference type** — the variable holds a handle, and the object lives on the heap. That difference decides what assignment does, what pass-to-function does, and where memory allocations happen.",
+    "This lesson shows a Point struct being copied by assignment versus a Point class being shared, so you can see why the same code with one keyword changed can behave completely differently.",
+  ],
   stages: [
     {
       id: "struct",

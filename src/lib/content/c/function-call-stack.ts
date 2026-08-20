@@ -87,6 +87,11 @@ export const functionCallStack: Lesson = {
   access: "free",
   language: "c",
   keywords: ["call stack", "stack frame", "return address", "function calls in c", "nested calls"],
+  intro: [
+    "When a function calls another function, both are technically \"running\" at the same time — the caller is paused, waiting for the callee to finish. The machine tracks all of this with something called the **call stack**.",
+    "Every function call pushes a new **frame** onto the stack, containing that call's local variables and where to return to. Every `return` pops the top frame off, freeing its space and jumping back.",
+    "This lesson watches frames stack up as one function calls another, and pop back down as returns fire. The name \"stack\" is not a metaphor — it is literally that shape in memory.",
+  ],
   stages: [
     {
       id: "main",

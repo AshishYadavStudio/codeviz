@@ -62,6 +62,11 @@ export const propertiesAndFields: Lesson = {
   access: "free",
   language: "csharp",
   keywords: ["property", "field", "auto-property", "get set", "init", "backing field"],
+  intro: [
+    "In C#, a **field** is raw storage — a slot in the object. A **property** looks the same from outside (`obj.Name = \"Ana\"`) but is actually a pair of methods (`get_Name` and `set_Name`) wrapping the field.",
+    "Why the layer? Because \"read this value\" and \"write this value\" often want extra behaviour: validation, change notification, computed values. Properties let you add that behaviour later without changing any calling code.",
+    "This lesson shows what the compiler generates behind `{ get; set; }`, and covers the modern variants: auto-properties, init-only, and computed properties.",
+  ],
   stages: [
     {
       id: "field",

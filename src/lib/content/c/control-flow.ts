@@ -91,6 +91,11 @@ export const controlFlow: Lesson = {
   access: "free",
   language: "c",
   keywords: ["if else", "while loop", "for loop", "switch", "control flow", "fallthrough"],
+  intro: [
+    "By default a program runs top-to-bottom, one line after another. **Control flow** is how you make it do anything else: choose between paths (`if`), repeat something (`while`, `for`), or jump to one of many cases (`switch`).",
+    "Everything a program *does* — reacting to input, processing a list, retrying on failure — is control flow. The whole shape of a program is which lines run, in what order, how many times.",
+    "This lesson walks through each construct one step at a time so you can see exactly which branch is taken and how loop counters change on every iteration.",
+  ],
   stages: [
     {
       id: "if-eval",

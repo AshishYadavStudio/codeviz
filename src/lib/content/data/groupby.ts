@@ -123,6 +123,11 @@ export const groupBy: Lesson = {
   language: "python",
   filename: "analysis.py",
   keywords: ["groupby", "split apply combine", "aggregation", "pandas", "transform", "agg"],
+  intro: [
+    "\"Total sales per region\", \"average score per class\", \"count of orders per customer\" — all of these follow the same pattern: split the rows into groups, apply a function to each group, combine the results.",
+    "Pandas gives you this with `.groupby()`. It looks like a single line of code, but three separate steps are happening: **split** (bucket rows by group key), **apply** (compute per bucket), **combine** (glue results back into one frame).",
+    "This lesson breaks that one line into its three phases so you can see exactly what happens between `.groupby(\"region\")` and the final result.",
+  ],
   stages: [
     {
       id: "start",

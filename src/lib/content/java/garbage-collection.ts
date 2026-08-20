@@ -93,6 +93,11 @@ export const garbageCollection: Lesson = {
   access: "free",
   language: "java",
   keywords: ["garbage collection", "reachability", "GC roots", "memory leak", "java heap"],
+  intro: [
+    "In C, you free memory yourself. In Java, the runtime does it — the **garbage collector** periodically scans the heap and reclaims objects nothing can still reach.",
+    "\"Reach\" is the key word. The GC starts from *roots* (local variables in running methods, static fields) and follows every reference. Anything it finds is alive. Anything it doesn't is garbage.",
+    "This lesson visualises reachability: watch objects get orphaned when the last reference to them is dropped, and see why holding a reference in a long-lived collection is the classic Java \"memory leak\".",
+  ],
   stages: [
     {
       id: "roots",

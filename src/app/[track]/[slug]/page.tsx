@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ConceptPlayer } from "@/components/viz/ConceptPlayer";
 import { DifficultyMeter } from "@/components/site/DifficultyMeter";
+import { RichText } from "@/components/ui/RichText";
 import {
   getLesson,
   getTrack,
@@ -69,6 +70,22 @@ export default async function ConceptPage({ params }: Props) {
           </span>
         </div>
       </header>
+
+      {lesson.intro && lesson.intro.length > 0 && (
+        <section
+          aria-label="Before you start"
+          className="mb-8 max-w-3xl rounded-[var(--radius-card)] border border-border bg-surface/60 p-5 sm:p-6"
+        >
+          <p className="cv-eyebrow mb-3 text-steel-ink">Before you start</p>
+          <div className="flex flex-col gap-3 text-[0.9375rem] leading-relaxed">
+            {lesson.intro.map((paragraph, i) => (
+              <p key={i}>
+                <RichText text={paragraph} />
+              </p>
+            ))}
+          </div>
+        </section>
+      )}
 
       <ConceptPlayer lesson={lesson} />
 

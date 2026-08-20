@@ -86,6 +86,11 @@ export const referencesAndObjects: Lesson = {
   access: "free",
   language: "java",
   keywords: ["java references", "pass by value", "heap", "null", "object identity"],
+  intro: [
+    "In Java there are two kinds of things: **primitives** (`int`, `boolean`, `double` — the eight built-in number-and-truth-value types) and **everything else**. Everything else is an *object*, and every object lives on the heap.",
+    "Your variable never *is* the object. It holds a **reference** — a handle — that leads to the object on the heap. If you assign one reference to another, you get two handles pointing at the same object, not two objects.",
+    "This lesson makes those handles visible with arrows, so you can see why changing an object through one variable is visible through the other, and what `null` actually means.",
+  ],
   stages: [
     {
       id: "primitive",

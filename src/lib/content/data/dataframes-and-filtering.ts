@@ -125,6 +125,11 @@ export const dataframesAndFiltering: Lesson = {
   language: "python",
   filename: "analysis.py",
   keywords: ["pandas", "dataframe", "boolean mask", "filtering", "loc", "vectorised"],
+  intro: [
+    "A **DataFrame** is a table — rows and columns — like a spreadsheet or a database table. Pandas is the Python library that gives you DataFrames and hundreds of operations on them.",
+    "To \"filter\" a DataFrame means: keep only some of the rows. In pandas you almost never write a for-loop for this. Instead, you build a column of True/False (a **boolean mask**) and lay it over the frame — rows aligned with True are kept.",
+    "This lesson shows the mask forming, then being applied, and explains why this vectorised approach is orders of magnitude faster than iterating row by row.",
+  ],
   stages: [
     {
       id: "shape",

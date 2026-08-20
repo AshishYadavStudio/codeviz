@@ -98,6 +98,11 @@ export const functionsAndScope: Lesson = {
   access: "free",
   language: "c",
   keywords: ["function call", "pass by value", "scope", "static variable", "global variable"],
+  intro: [
+    "A **function** is a named block of code you can run whenever you need it. Instead of writing the same 10 lines in five different places, you write them once as a function and call it five times.",
+    "**Scope** is the rule that decides which names you can see from where. A variable declared inside a function only exists inside that function — nobody else can touch it, and it disappears the moment the function returns.",
+    "This lesson watches a function get called, receive a copy of its arguments, do work in its own private space, and return. You will also see the three lifetimes variables can have: local (dies with the function), static (survives between calls), and global (lives forever).",
+  ],
   stages: [
     {
       id: "main-start",

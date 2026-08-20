@@ -79,6 +79,11 @@ export const boxing: Lesson = {
   language: "csharp",
   filename: "Program.cs",
   keywords: ["boxing", "unboxing", "object", "generics", "InvalidCastException", "c# performance"],
+  intro: [
+    "In C#, an `int` is a value type. But `object` is a reference type. So what happens when you assign an int to an object variable? The runtime wraps the int in a heap-allocated box — this is **boxing**.",
+    "It's easy to miss. `object o = 42` looks free. It isn't — that one line allocates a small heap object, copies the 42 into it, and stores a reference. Do this in a tight loop and you've made a real problem.",
+    "This lesson watches an int get boxed on assignment, unboxed back on cast, and shows why generics (`List<int>`) exist to avoid this whole dance.",
+  ],
   stages: [
     {
       id: "value",

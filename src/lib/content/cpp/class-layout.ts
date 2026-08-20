@@ -67,6 +67,11 @@ export const classLayout: Lesson = {
   access: "free",
   language: "cpp",
   keywords: ["class layout", "this pointer", "sizeof", "member function", "object model"],
+  intro: [
+    "A **class** looks like a big new idea — data and functions bundled together — but in memory it is almost boring. The data members sit next to each other exactly like a C struct. The methods don't sit inside the object at all; they live in the program's code section, shared by every instance.",
+    "So how does `a.speak()` know which object's data to use? The compiler passes a hidden extra argument called `this` — a pointer to the object you called the method on. Inside the method, `name` really means `this->name`.",
+    "This lesson shows a class object in memory (just the fields, nothing more), and demonstrates how the same shared method finds different data for different objects via `this`.",
+  ],
   stages: [
     {
       id: "layout",

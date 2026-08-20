@@ -60,6 +60,11 @@ export const nullableTypes: Lesson = {
   access: "free",
   language: "csharp",
   keywords: ["nullable", "int?", "null coalescing", "null conditional", "Nullable<T>"],
+  intro: [
+    "A regular `int` cannot be null — it always holds a number. But real data has gaps: a database field that might be NULL, an optional config value, a form input someone left blank.",
+    "C# gives you two answers. `int?` (nullable value type) is a real struct that wraps the int with a \"do I have a value?\" flag — a runtime construct. `string?` (nullable reference type) is a compiler annotation only, telling the checker \"this might be null\", with zero runtime cost.",
+    "This lesson visualises both, and shows the `??` and `?.` operators that make working with maybe-null values a lot less painful.",
+  ],
   stages: [
     {
       id: "non-null",

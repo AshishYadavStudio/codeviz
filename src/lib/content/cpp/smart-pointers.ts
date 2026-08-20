@@ -100,6 +100,11 @@ export const smartPointers: Lesson = {
   access: "free",
   language: "cpp",
   keywords: ["unique_ptr", "shared_ptr", "make_unique", "reference counting", "ownership", "RAII"],
+  intro: [
+    "Manual `new`/`delete` is where most C++ memory bugs live. **Smart pointers** wrap a raw pointer in an RAII object that deletes automatically when it goes out of scope, so you cannot forget.",
+    "There are two flavours. `unique_ptr` says \"one owner only\" — the object is destroyed when its unique pointer dies. `shared_ptr` says \"multiple owners, last one turns out the lights\" — it keeps a count of how many pointers refer to the object and deletes when the count hits zero.",
+    "This lesson watches a `unique_ptr` transfer ownership on move, and a `shared_ptr` count go up and down as references come and go.",
+  ],
   stages: [
     {
       id: "unique",

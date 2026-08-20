@@ -157,6 +157,11 @@ export const vectorGrowth: Lesson = {
   access: "free",
   language: "cpp",
   keywords: ["std::vector", "capacity", "reallocation", "iterator invalidation", "reserve"],
+  intro: [
+    "A `std::vector` looks like a Python list or a resizable array: you keep pushing values in and it grows. Behind the scenes it is a plain C-style block of memory that occasionally *moves* to a bigger location.",
+    "That move is invisible to your `push_back` calls but not invisible to any pointer or iterator you were holding into the vector — those go stale the moment the vector relocates.",
+    "This lesson watches `push_back` fill up capacity, allocate a bigger block, copy elements over, and free the old block. Then it shows what happens to an iterator you were holding when that move fires.",
+  ],
   stages: [
     {
       id: "empty",

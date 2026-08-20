@@ -81,6 +81,11 @@ export const bitwiseOperations: Lesson = {
   access: "free",
   language: "c",
   keywords: ["bitwise operators", "bit manipulation", "bitmask", "shift operators", "xor", "flags"],
+  intro: [
+    "Every byte is really 8 bits — 8 tiny on/off switches. Normally you don't care; you work with the whole byte as a number. But sometimes you *do* care about individual bits: file permissions, feature flags, graphics colours.",
+    "**Bitwise operators** let you work with those individual switches. `&` (AND), `|` (OR), `^` (XOR), `~` (NOT), and the shift operators `<<` `>>` — five operators, each doing one thing per bit, all at the same time.",
+    "This lesson visualises those 8 switches and shows what each operator does to them, so you can read `flags & 0x04` and know exactly which switch you are checking.",
+  ],
   stages: [
     {
       id: "intro",

@@ -81,6 +81,11 @@ export const dataTypesAndSizes: Lesson = {
   access: "free",
   language: "c",
   keywords: ["sizeof", "data types", "integer overflow", "char", "int", "signed"],
+  intro: [
+    "A **type** is a promise about what kind of value lives in a variable and how many bytes of memory it takes up. `int` means \"a whole number, 4 bytes\". `char` means \"one character, 1 byte\".",
+    "Types matter because memory is finite. A single byte can only hold 256 different values. If you try to store 300 in it, something has to give — and what gives is called *overflow*, one of the oldest and nastiest bug categories in programming.",
+    "This lesson shows you the exact byte-count of every basic C type, and walks 127 + 1 wrapping around into -128 so you can see overflow with your own eyes.",
+  ],
   stages: [
     {
       id: "char",

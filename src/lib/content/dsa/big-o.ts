@@ -57,6 +57,11 @@ export const bigO: Lesson = {
   access: "free",
   language: "c",
   keywords: ["Big-O", "time complexity", "O(n)", "O(n²)", "O(log n)", "asymptotic"],
+  intro: [
+    "Two algorithms solve the same problem. Which is better? \"Faster on my laptop\" is not a good answer — a faster laptop or a smaller input can flip the result.",
+    "**Big-O notation** answers the question in a machine-independent way: how does the amount of work grow as the input gets bigger? O(n) means work grows in step with input. O(n²) means work grows with the *square* of input — double the input, quadruple the work.",
+    "This lesson shows five common growth shapes side by side, watches their operation counts as n doubles, and explains why constants don't matter at scale.",
+  ],
   stages: [
     {
       id: "constant",

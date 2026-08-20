@@ -118,6 +118,11 @@ export const arraysVsPointers: Lesson = {
   access: "free",
   language: "c",
   keywords: ["array decay", "arr[i] equals *(arr+i)", "sizeof array", "passing arrays to functions"],
+  intro: [
+    "In most C code, an array and a pointer act the same way. `arr[i]` and `*(arr + i)` compile to the same instructions. This is convenient, and it is also the source of endless confusion.",
+    "The difference sneaks in at exactly two moments: when you ask `sizeof`, and when you pass the array to a function. Miss either, and you get a bug that looks impossible but is actually the language telling you these are two different things.",
+    "This lesson shows exactly when arrays behave like pointers, when they don't, and why `sizeof(arr)` gives one answer here and a different answer three lines later.",
+  ],
   stages: [
     {
       id: "layout",

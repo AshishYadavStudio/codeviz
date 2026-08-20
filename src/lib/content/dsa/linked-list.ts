@@ -89,6 +89,11 @@ export const linkedList: Lesson = {
   access: "free",
   language: "c",
   keywords: ["linked list", "nodes and pointers", "insertion", "traversal", "deletion"],
+  intro: [
+    "A **linked list** is the opposite trade-off from an array. Instead of one block of memory, it is a chain of **nodes** scattered across the heap — each node holds a value plus a pointer to the next node.",
+    "That indirection is the whole story. You can insert or delete a node in the middle without moving anything else (just re-wire the pointers). But to reach the 500th element, you have to walk from the start, one pointer at a time.",
+    "This lesson watches nodes get allocated on the heap, linked together, spliced apart, and shows the classic bug — leaving a dangling pointer to a freed node.",
+  ],
   stages: [
     {
       id: "node",

@@ -80,6 +80,11 @@ export const namespaces: Lesson = {
   access: "free",
   language: "cpp",
   keywords: ["namespace", "using directive", "scope resolution", "name collision", "std"],
+  intro: [
+    "As a program grows, name collisions become inevitable. Two libraries both want to call something `sort` or `Result` or `log`. **Namespaces** are C++'s answer: a way to say \"my `sort`\" versus \"their `sort`\" without either changing.",
+    "A namespace is just a labelled scope. `std::cout` means \"cout inside the std namespace\". The `::` is the scope resolution operator — it drills into the namespace to find the name.",
+    "This lesson shows the three ways to reach a namespaced name — fully qualified, one-name imports, and blanket imports — and why the blanket version (`using namespace std`) is fine in a `.cpp` file but a landmine in a header.",
+  ],
   stages: [
     {
       id: "two-ns",

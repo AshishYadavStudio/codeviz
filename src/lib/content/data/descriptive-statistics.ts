@@ -85,6 +85,11 @@ export const descriptiveStatistics: Lesson = {
   language: "python",
   filename: "stats.py",
   keywords: ["mean", "median", "standard deviation", "describe", "outlier", "skew"],
+  intro: [
+    "Given a column of 1000 numbers, you can't look at each one. You need summaries — single numbers that stand in for the whole column. **Descriptive statistics** are those summaries.",
+    "The three you use most: **mean** (add everything up, divide by count), **median** (sort and pick the middle), and **standard deviation** (how spread out from the mean the values are). They agree when data is nice. They disagree — and reveal problems — when it isn't.",
+    "This lesson shows what happens when one outlier lands in the data. The mean gets pulled far from typical. The median doesn't budge. That gap is often the whole story.",
+  ],
   stages: [
     {
       id: "data",

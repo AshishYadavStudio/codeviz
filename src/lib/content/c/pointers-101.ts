@@ -74,6 +74,11 @@ export const pointers101: Lesson = {
   access: "free",
   language: "c",
   keywords: ["c pointers", "dereference", "address of operator", "null pointer", "pointer tutorial"],
+  intro: [
+    "A **pointer** sounds mystical, but it is the most ordinary thing possible: a variable whose value happens to be a memory address rather than a number or a character.",
+    "Why does this exist? Because sometimes you need to say \"the thing over *there*\" instead of \"a copy of the thing\". You want to modify what another function has, share one big object between many places, or build a list that can grow.",
+    "This lesson shows the two operators that make pointers work — `&` (\"the address of\") and `*` (\"the value at\") — and watches an arrow appear between two boxes in memory. Once you see that arrow, pointers stop being mystical.",
+  ],
   stages: [
     {
       id: "x",

@@ -103,6 +103,11 @@ export const sqlSelect: Lesson = {
   language: "sql",
   filename: "query.sql",
   keywords: ["SELECT", "WHERE", "ORDER BY", "SQL", "FROM", "logical order"],
+  intro: [
+    "**SQL** is the language for asking questions of a database. Every query you'll ever write starts with the same four words: SELECT (columns), FROM (table), WHERE (filter), ORDER BY (sort).",
+    "The tricky bit: SQL runs those clauses in a different order than you write them. You write SELECT first, but the database does WHERE first — because it needs to filter rows before it knows which values to select. That's why you can't refer to a column alias inside WHERE.",
+    "This lesson runs a query step by step in the order the database actually executes it, so the rules stop feeling arbitrary and start making sense.",
+  ],
   stages: [
     {
       id: "star",

@@ -203,6 +203,12 @@ export interface Lesson {
   filename?: string;
   /** Search/SEO keywords. */
   keywords?: string[];
+  /**
+   * Plain-English intro for absolute beginners, shown above the stepper.
+   * A short "what is this and why does it matter" — no jargon, no code,
+   * no assumed prior lesson. Skip if the tagline already covers it.
+   */
+  intro?: string[];
   stages: Stage[];
 }
 

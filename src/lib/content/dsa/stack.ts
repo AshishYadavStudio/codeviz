@@ -79,6 +79,11 @@ export const stack: Lesson = {
   access: "free",
   language: "c",
   keywords: ["stack", "LIFO", "push", "pop", "call stack", "bracket matching"],
+  intro: [
+    "A **stack** is a data structure with only two operations: **push** (add to the top) and **pop** (remove from the top). Just those two. Not \"remove from the middle\" or \"read the third one down\" — just top-of-stack.",
+    "That restriction sounds limiting, but it maps naturally onto anything with nesting: function calls, brackets in an expression, browser history, undo. The last thing you pushed is the first thing you pop — LIFO, \"last in, first out\".",
+    "This lesson walks through push and pop on a simple array-backed stack, then shows the everyday application: matching brackets in `((a+b)*c)`.",
+  ],
   stages: [
     {
       id: "empty",

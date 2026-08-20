@@ -165,6 +165,11 @@ export const virtualFunctions: Lesson = {
   access: "free",
   language: "cpp",
   keywords: ["virtual functions", "vtable", "vptr", "dynamic dispatch", "polymorphism", "c++ inheritance"],
+  intro: [
+    "**Polymorphism** is the idea that different types can respond to the same call in their own way — a `Dog` and a `Cat` both understand `speak()`, but you get \"woof\" from one and \"meow\" from the other.",
+    "C++ implements this with **virtual functions**. When a method is declared `virtual`, the compiler doesn't hard-code which version to call. Instead, each object carries a hidden pointer (`vptr`) to a table (`vtable`) that lists which override to use.",
+    "This lesson makes the vtable visible: you'll see the hidden pointer inside each object, watch it lead to the correct function, and understand why virtual calls cost one extra memory read.",
+  ],
   stages: [
     {
       id: "objects",

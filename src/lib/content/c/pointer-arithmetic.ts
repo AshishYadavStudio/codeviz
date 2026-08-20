@@ -141,6 +141,11 @@ export const pointerArithmetic: Lesson = {
   access: "free",
   language: "c",
   keywords: ["pointer arithmetic", "p++", "array traversal", "one past the end", "sizeof"],
+  intro: [
+    "Once a pointer holds an address, you can do maths on it. `p + 1` does not mean \"the byte after p\" — it means \"the *next element*\" of whatever type p points at.",
+    "That distinction is why C's arrays and pointers feel interchangeable: walking an array is really just adding 1 to a pointer, and the compiler figures out how many bytes to actually move.",
+    "This lesson steps a pointer through an array one element at a time so you can watch the address jump by 4 bytes for an `int*` and by 1 byte for a `char*` — same operation, different distance.",
+  ],
   stages: [
     {
       id: "start",

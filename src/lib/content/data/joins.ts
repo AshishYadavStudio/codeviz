@@ -130,6 +130,11 @@ export const joins: Lesson = {
   language: "python",
   filename: "analysis.py",
   keywords: ["merge", "join", "inner join", "left join", "outer join", "pandas", "NaN"],
+  intro: [
+    "You almost never have all your data in one table. Customers live in one table, orders in another; products here, categories there. **Joining** (also called merging) is the operation that stitches related tables together on a shared key.",
+    "The interesting part is not what happens to rows that match — everyone expects those to end up combined. The interesting part is what happens to rows that don't match: inner join drops them, left join keeps the left side, outer join keeps everything and fills gaps with NaN.",
+    "This lesson watches customers meet orders under each of the four join types, so you can see exactly which rows survive and which disappear.",
+  ],
   stages: [
     {
       id: "inputs",

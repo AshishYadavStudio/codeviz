@@ -95,6 +95,11 @@ export const grepAndRegex: Lesson = {
   language: "bash",
   filename: "session.sh",
   keywords: ["grep", "regex", "regular expression", "pattern matching", "log file", "pipeline"],
+  intro: [
+    "`grep` searches text for lines that match a pattern and prints them. That's the entire job. But because it works on any stream — a file, the output of another command — it turns into one of the most-used tools you'll ever meet.",
+    "The pattern can be a literal string (`grep error log.txt`) or a **regular expression** — a small language for describing shapes of text (`grep -E \"^[0-9]+ ERROR\"`).",
+    "This lesson runs grep on a log file, shows which lines are kept and which are dropped, then covers the flags you'll actually use daily: `-i`, `-n`, `-v`, and `-E`.",
+  ],
   stages: [
     {
       id: "basic",

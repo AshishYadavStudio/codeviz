@@ -104,6 +104,11 @@ export const hashMapInternals: Lesson = {
   access: "free",
   language: "java",
   keywords: ["HashMap", "hashCode", "collision", "bucket", "load factor", "equals contract"],
+  intro: [
+    "A `HashMap` gives you \"look up a value by any key\" in constant time. How? The map converts the key into a number (the **hash**), uses that number to pick one of several **buckets**, and stores the entry there.",
+    "The magic is that going *back* to find the value works the same way: hash the key, pick the bucket, and there it is. No scanning through every entry.",
+    "This lesson opens up the buckets, shows a collision when two keys land in the same one, and explains why `equals()` and `hashCode()` must always agree or your map silently loses entries.",
+  ],
   stages: [
     {
       id: "empty",

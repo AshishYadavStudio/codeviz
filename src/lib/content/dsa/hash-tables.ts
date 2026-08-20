@@ -81,6 +81,11 @@ export const hashTables: Lesson = {
   access: "free",
   language: "c",
   keywords: ["hash table", "hash function", "collision", "chaining", "O(1) lookup"],
+  intro: [
+    "A **hash table** answers \"look up a value by any key\" in constant time. Python's dict, JavaScript's object, Java's HashMap — all the same idea underneath.",
+    "The trick: convert the key into a number (a **hash**), reduce that number to an index into an array of **buckets**, and store the entry there. Going back is the same process, so lookup is one calculation and one memory read.",
+    "This lesson shows keys landing in buckets, then shows what happens when two keys hash to the same bucket — a **collision** — and how the table handles it by keeping a small chain per bucket.",
+  ],
   stages: [
     {
       id: "empty",

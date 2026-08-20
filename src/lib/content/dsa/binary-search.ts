@@ -82,6 +82,11 @@ export const binarySearch: Lesson = {
   access: "free",
   language: "c",
   keywords: ["binary search", "logarithmic search", "sorted array", "off by one", "midpoint overflow"],
+  intro: [
+    "You're guessing a number between 1 and 100. Every guess, you get told \"higher\" or \"lower\". What's the fewest guesses needed to be sure? Seven — because each guess halves the remaining range.",
+    "**Binary search** is exactly that algorithm applied to a sorted array. Look at the middle. Too big? Discard the right half. Too small? Discard the left half. Repeat. A million-element array takes about 20 comparisons.",
+    "But binary search is famously easy to get *slightly* wrong. This lesson steps through the algorithm, points at the classic off-by-one and integer-overflow traps, and shows you the version that actually works.",
+  ],
   stages: [
     {
       id: "setup",

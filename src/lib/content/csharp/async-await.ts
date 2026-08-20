@@ -97,6 +97,11 @@ export const asyncAwait: Lesson = {
   language: "csharp",
   filename: "Program.cs",
   keywords: ["async await", "Task", "state machine", "deadlock", "ConfigureAwait", "asynchronous c#"],
+  intro: [
+    "`await` sounds like it means \"wait here until this finishes\". It doesn't. What it actually does is *return* from the current method, hand its remaining work to a callback, and let the caller keep going.",
+    "This is confusing until you see it. The thread doing your code isn't blocked while a database query runs; it's off doing other work. When the query returns, the runtime resumes your method from where the `await` left off.",
+    "This lesson traces what actually happens step by step — the state machine the compiler generates, the callback that fires on completion, and where async exceptions surface.",
+  ],
   stages: [
     {
       id: "sync-start",

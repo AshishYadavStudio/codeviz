@@ -109,6 +109,11 @@ export const missingData: Lesson = {
   language: "python",
   filename: "analysis.py",
   keywords: ["NaN", "missing data", "dropna", "fillna", "imputation", "pandas"],
+  intro: [
+    "Real data has gaps. A survey response is blank, a sensor was offline, a database field was NULL. Pandas represents these gaps with a special value: `NaN` (\"not a number\").",
+    "How you handle NaN is a design decision, not a technical one. Drop the rows? Fill with zero? Fill with the average? Each choice tells a different story — some are honest, some silently distort your answer.",
+    "This lesson shows the three common strategies (`dropna`, `fillna`, forward-fill) and points out the traps: e.g., `sum()` skips NaN silently, so a column that's mostly missing can produce a suspiciously small total.",
+  ],
   stages: [
     {
       id: "look",

@@ -63,6 +63,11 @@ export const structsAndPadding: Lesson = {
   access: "free",
   language: "c",
   keywords: ["struct padding", "memory alignment", "sizeof struct", "data structure alignment", "field ordering"],
+  intro: [
+    "A **struct** groups related fields under one name — instead of three loose variables `x`, `y`, `z`, you have one `Point` with `.x`, `.y`, `.z`. Nothing new happens in memory; the fields just sit next to each other.",
+    "Except the fields do *not* always sit next to each other. Computers read memory faster when values sit on \"nice\" addresses divisible by the value's size. So the compiler quietly inserts empty bytes — **padding** — to keep everyone aligned.",
+    "This lesson shows why `sizeof(struct)` is often bigger than you expect, and why reordering the fields by size can shrink your struct by 30% without changing anything the program does.",
+  ],
   stages: [
     {
       id: "expectation",

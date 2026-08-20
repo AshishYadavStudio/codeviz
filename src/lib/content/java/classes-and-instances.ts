@@ -99,6 +99,11 @@ export const classesAndInstances: Lesson = {
   access: "free",
   language: "java",
   keywords: ["class", "instance", "constructor", "static field", "this", "object creation"],
+  intro: [
+    "A **class** is a blueprint. An **instance** is a house built from that blueprint. The class describes what fields and methods exist; each instance is a separate object on the heap with its own field values.",
+    "The **constructor** is the code that runs when you call `new` — it sets up the fresh object's fields. And `static` marks something as belonging to the class itself, not to any one instance: one copy total, shared by everyone.",
+    "This lesson creates two `Dog` objects, watches each one get its own name and age, and shows a static counter shared between them.",
+  ],
   stages: [
     {
       id: "first-new",

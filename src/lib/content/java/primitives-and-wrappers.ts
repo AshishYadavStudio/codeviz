@@ -85,6 +85,11 @@ export const primitivesAndWrappers: Lesson = {
   access: "free",
   language: "java",
   keywords: ["primitive", "wrapper", "Integer", "boxing", "stack vs heap", "generics"],
+  intro: [
+    "Java's eight **primitive** types hold their value directly — an `int` variable literally contains the number 42, no indirection. Fast, cheap, but not objects.",
+    "Sometimes you need the same value *as* an object — for example, generic containers like `List<T>` insist on objects. That's why every primitive has a **wrapper** class: `int`→`Integer`, `boolean`→`Boolean`, and so on. The wrapper is a heap object that carries the value.",
+    "This lesson shows a bare int in its stack slot next to a boxed Integer on the heap — same number, radically different storage.",
+  ],
   stages: [
     {
       id: "int",

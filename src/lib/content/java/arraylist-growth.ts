@@ -109,6 +109,11 @@ export const arrayListGrowth: Lesson = {
   access: "free",
   language: "java",
   keywords: ["ArrayList", "LinkedList", "capacity", "amortised", "big o", "java collections"],
+  intro: [
+    "You reach for `ArrayList` when you need a list that grows. But an array under the hood has a fixed size — so how does the list appear to keep growing forever?",
+    "The trick is that `ArrayList` keeps two numbers: `size` (how many elements you added) and `capacity` (how much room the internal array has). When you exceed capacity, it quietly allocates a bigger array (typically 1.5× or 2× the old one), copies everything over, and keeps going.",
+    "This lesson watches capacity double as elements pile up, and compares against `LinkedList` — a chain of scattered heap nodes with completely different trade-offs.",
+  ],
   stages: [
     {
       id: "empty",

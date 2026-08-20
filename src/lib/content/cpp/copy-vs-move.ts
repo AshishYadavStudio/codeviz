@@ -108,6 +108,11 @@ export const copyVsMove: Lesson = {
   access: "free",
   language: "cpp",
   keywords: ["move semantics", "std::move", "copy constructor", "rvalue reference", "c++11"],
+  intro: [
+    "When you assign one object to another, what happens? A **copy** duplicates all the data — safe, but potentially expensive if the object owns a big buffer. A **move** transfers ownership — the destination takes the buffer, and the source is left as a valid but empty shell.",
+    "Move semantics were added in C++11 because copying a 100 MB string just to pass it to a function is wasteful when the caller was going to throw its copy away anyway.",
+    "This lesson shows a copy duplicating a heap buffer and a move stealing one, so you can see why `std::move` can make a big-object pipeline dramatically faster with no logic changes.",
+  ],
   stages: [
     {
       id: "start",
