@@ -1,26 +1,250 @@
 @import "tailwindcss";
 
+/* Manual theme switch: [data-theme="dark"] on <html>. Semantic tokens below
+   flip automatically, so `dark:` utilities are rarely needed. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ---------------------------------------------------------------------------
+   CodeViz tokens — "lab notebook meets debugger".
+   Amber is reserved. It means "live/active" and nothing else: current line,
+   active memory cell, moving pointer. Never use it for decoration or CTAs.
+--------------------------------------------------------------------------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  /* surfaces */
+  --bg: #f7f5f0;             /* warm paper */
+  --surface: #fffefb;        /* raised cards */
+  --panel: #efebe2;          /* sunken visualization canvas */
+  --rule: rgba(15, 20, 25, 0.055); /* graph-paper grid line */
+  --border: #ded8cc;
+  --border-strong: #c3bbab;
+
+  /* text */
+  --ink: #0f1419;            /* headings, code */
+  --text: #4a5568;           /* graphite body */
+  --muted: #626e7e;          /* AA on both --bg and the sunken --panel */
+
+  /* structure */
+  --steel: #2b6cb0;
+  --steel-ink: #1e4e8c;      /* steel that must pass contrast as text */
+  --steel-wash: #e4edf8;
+
+  /* THE accent — live/active only */
+  --amber: #e8a33d;
+  --amber-ink: #8a5910;
+  --amber-wash: #fbeeda;
+
+  /* correctness only */
+  --green: #68d391;
+  --green-ink: #2c7a55;
+  --green-wash: #e3f7ec;
+
+  /* invalid / unsafe memory */
+  --danger: #b0432f;
+  --danger-ink: #a13d2b;
+  --danger-wash: #f8e6e2;
+
+  --shadow-card: 0 1px 2px rgba(15, 20, 25, 0.05), 0 8px 24px -12px rgba(15, 20, 25, 0.15);
+
+  /* Declared here, not only in @theme: `inline` themes are folded into utility
+     classes and never emitted as variables, so base-layer rules like
+     `body { font-family: var(--font-sans) }` would resolve to nothing.
+     The --font-*-* inputs come from next/font on <html>. */
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0f1419;
+  --surface: #161c24;
+  --panel: #0b1015;
+  --rule: rgba(160, 190, 220, 0.06);
+  --border: #253039;
+  --border-strong: #38454f;
+
+  --ink: #f1f4f8;
+  --text: #a9b4c2;
+  --muted: #7a8797;
+
+  --steel: #5b9be0;
+  --steel-ink: #93c1ee;
+  --steel-wash: #16283c;
+
+  --amber: #e8a33d;
+  --amber-ink: #f0bc6e;
+  --amber-wash: #33260f;
+
+  --green: #68d391;
+  --green-ink: #8fe3b0;
+  --green-wash: #12301f;
+
+  --danger: #e07a66;
+  --danger-ink: #ec9a8a;
+  --danger-wash: #331a16;
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* Classroom mode: projector-friendly sizing, no other behaviour change.
+   Scales the ROOT font size — every size in the design system is in rem, so
+   the whole page grows proportionally, diagrams included. */
+[data-classroom="1"] {
+  font-size: 118%;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-panel: var(--panel);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-ink: var(--ink);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-steel: var(--steel);
+  --color-steel-ink: var(--steel-ink);
+  --color-steel-wash: var(--steel-wash);
+  --color-amber: var(--amber);
+  --color-amber-ink: var(--amber-ink);
+  --color-amber-wash: var(--amber-wash);
+  --color-green: var(--green);
+  --color-green-ink: var(--green-ink);
+  --color-green-wash: var(--green-wash);
+  --color-danger: var(--danger);
+  --color-danger-ink: var(--danger-ink);
+  --color-danger-wash: var(--danger-wash);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --radius-card: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+
+  code, pre, kbd {
+    font-family: var(--font-mono);
+    font-variant-ligatures: none;
+  }
+
+  /* Visible keyboard focus everywhere. Steel, not amber — amber means live. */
+  :focus-visible {
+    outline: 2px solid var(--steel);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+
+  ::selection {
+    background: var(--steel-wash);
+    color: var(--ink);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Faint engineering-paper grid. Used only behind visualization canvases. */
+  .cv-graph-paper {
+    background-image:
+      linear-gradient(to right, var(--rule) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--rule) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  .cv-inline-code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    color: var(--ink);
+    background: color-mix(in srgb, var(--panel) 70%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.05em 0.32em;
+    white-space: nowrap;
+  }
+
+  .cv-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ---- visualization primitives ---- */
+
+  /* Uninitialised, freed, or compiler-inserted memory: present but not yours. */
+  .cv-hatch {
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent 0 5px,
+      var(--border) 5px 6px
+    );
+  }
+
+  /* The live cell. The only amber ring on the page. */
+  .cv-cell-live {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--amber) 22%, transparent);
+  }
+
+  /* Pointer curves draw themselves in when retargeted — this is the motion
+     that makes `p++` and `p = &x` readable. pathLength=1 normalises the dash
+     maths across curves of any length. */
+  .cv-arrow-draw {
+    stroke-dasharray: 1;
+    animation: cv-draw 380ms ease-out both;
+  }
+
+  .cv-arrow-tip,
+  .cv-arrow-label {
+    animation: cv-fade-in 200ms ease-out 260ms both;
+  }
+
+  @keyframes cv-draw {
+    from { stroke-dashoffset: 1; }
+    to { stroke-dashoffset: 0; }
+  }
+
+  @keyframes cv-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+/* One byte of a memory lane. In rem, so it follows classroom mode too. */
+:root {
+  --byte-unit: 2.125rem;
 }
